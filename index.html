@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Srt.js</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+    	<h1>Srt.js</h1>
+        <form id="srtForm">
+            <div class="form-group">
+                <label>Upload <code>.srt</code> file</label>
+                <input type="file" id="srtInput" required="required" />
+            </div>
+            <div class="form-group">
+                <label>Enter the time you want to shift</label>
+                <input class="form-control" type="text" id="srtDelta" placeholder="5" required="required" />
+            </div>
+            <div class="form-group">
+                <label>Select the unit</label>
+                <select class="form-control" id="srtUnit" required="required">
+                    <option value="hours">hours</option>
+                    <option value="minutes">minutes</option>
+                    <option value="seconds">seconds</option>
+                    <option value="milliseconds">milliseconds</option>
+                </select>
+            </div>
+            <div class="form-group" id="submitBtnWrapper">
+            	<button id="submitBtn" type="submit" class="btn btn-default">OK</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="dist/built.js"></script>
+
+</html>
