@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
+var less = require('gulp-less');
 
 gulp.task('webpack', function() {
     return gulp.src('src/main.js')
@@ -8,14 +9,22 @@ gulp.task('webpack', function() {
         	output: {
         		filename: 'built.js'
         	},
-        	debug: false
+        	debug: true
         }))
-        .pipe(uglify())
+        //.pipe(uglify())
+        .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('less', function() {
+    return gulp.src('src/main.less')
+        .pipe(less())
         .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('watch', function() {
     gulp.watch('src/*.js', ['webpack']);
+    gulp.watch('src/*.less', ['less']);
 });
 
-gulp.task('default', ['webpack', 'watch']);
+gulp.task('default', ['webpack', 'less', 'watch']);
+

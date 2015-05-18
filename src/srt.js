@@ -11,7 +11,6 @@ Srt.prototype = {
     },
     parse: function() {
         var lines = this.srtContent.split('\n\r\n');
-
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
             var origin = line.split('\n');
@@ -21,7 +20,7 @@ Srt.prototype = {
                 // time
                 var timeLine = origin[1];
                 var startText = timeLine.match(/^[0-9][0-9]:[0-9][0-9]:[0-9][0-9],[0-9][0-9][0-9]/)[0];
-                var endText = timeLine.match(/\s[0-9][0-9]:[0-9][0-9]:[0-9][0-9],[0-9][0-9][0-9]\s/)[0].replace(' ', '');
+                var endText = timeLine.match(/\s[0-9][0-9]:[0-9][0-9]:[0-9][0-9],[0-9][0-9][0-9]/)[0].replace(' ', '');
                 var startDate = this.stringToDate(startText);
                 var endDate = this.stringToDate(endText);
                 // subtitle 
@@ -88,7 +87,7 @@ Srt.prototype = {
     		var line = this.lines[i];
     		srt += line.counter + '\n' + 
     			line.start.text + ' --> ' + line.end.text + '\n' + 
-    			line.subtitle + '\n\r';
+    			line.subtitle + '\n\r\n';
     	};
     	this.srtContent = srt;
     },

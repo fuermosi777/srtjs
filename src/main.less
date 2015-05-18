@@ -1,0 +1,150 @@
+body {
+    font-family: 'Lato';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    font-weight: 300;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+}
+
+a,
+button {
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    outline: none;
+}
+
+.top-section {
+    width: 100%;
+    height: 100%;
+    background-color: #1D2528;
+    overflow: hidden;
+    h1 {
+        font-size: 48px;
+        color: white;
+        text-align: center;
+        margin: 30px 0;
+    }
+    h2 {
+        font-size: 28px;
+        color: white;
+        text-align: center;
+    }
+    .group {
+        width: 240px;
+        margin: 10px auto;
+        input, select {
+            border: none;
+            background-color: #8f9090;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            width: 240px;
+        }
+        label {
+            font-weight: 300;
+            margin-top: 20px;
+            color: white;
+        }
+        button,
+        a.download {
+            display: inline-block;
+            width: 240px;
+            text-align: center;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            padding: 10px 0;
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 100px;
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+        a.download {
+            border-color: #EE7002;
+            background-color: #EE7002;
+            &:hover {
+                border-color: darken(#EE7002, 10%);
+                background-color: darken(#EE7002, 10%);
+            }
+        }
+    }
+    #dropzone {
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        position: relative;
+        border: 10px dotted #FFF;
+        border-radius: 20px;
+        color: white;
+        font: bold 24px/200px arial;
+        height: 220px;
+        margin: 40px auto;
+        text-align: center;
+        width: 240px;
+        &.hover {
+            border: 10px solid #FE5;
+            color: #FE5;
+        }
+        &.dropped {
+            background: #222;
+            border: 10px solid #444;
+        }
+        .content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        & [type="file"] {
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.content-section {
+	.github-link {
+		padding: 10px 20px;
+		border: 2px solid #1D2528;
+		color: #1D2528;
+		border-radius: 20px;
+		&:hover {
+			background-color: #1D2528;
+			color: white;
+		}
+	}
+}
+
+.footer-section {
+	padding: 60px 0 0 0;
+}
