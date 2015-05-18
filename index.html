@@ -3,36 +3,88 @@
 
 <head>
     <title>Srt.js</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/main.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="top-section">
         <h1>Srt.js</h1>
+        <h2>A JavaScript parser for SubRip(.srt) files</h2>
         <form id="srtForm">
-            <div class="form-group">
-                <label>Upload <code>.srt</code> file</label>
-                <input type="file" id="srtInput" required="required" />
+            <div id="dropzone">
+                <div class="content">Drop srt file(s)</div>
+                <input type="file" id="srtInput" />
             </div>
-            <div class="form-group">
+            <div class="group">
                 <label>Enter the time you want to shift</label>
-                <input class="form-control" type="text" id="srtDelta" placeholder="5" required="required" />
+                <input type="text" id="srtDelta" placeholder="Must be an integer" required="required" />
             </div>
-            <div class="form-group">
-                <label>Select the unit</label>
-                <select class="form-control" id="srtUnit" required="required">
+            <div class="group">
+                <label>Select the time unit</label>
+                <select id="srtUnit" required="required">
                     <option value="hours">hours</option>
                     <option value="minutes">minutes</option>
                     <option value="seconds">seconds</option>
                     <option value="milliseconds">milliseconds</option>
                 </select>
             </div>
-            <div class="form-group" id="submitBtnWrapper">
-                <button id="submitBtn" type="submit" class="btn btn-default">OK</button>
+            <div class="group" id="submitBtnWrapper">
+                <button type="submit">Shift</button>
             </div>
         </form>
+        <div class="container">
+            <p>
+                <span>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fuermosi777&repo=srtjs&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fuermosi777&repo=srt.js&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+            </span>
+            </p>
+        </div>
     </div>
+    <div class="content-section">
+        <div class="container">
+            <h2 class="page-header">Srt.js</h2>
+            <p>Srt.js is a simple JavaScript parser for SubRip(.srt) files. You can easily parse a <code>.srt</code> subtitle file in the client side or in the server side using Node.js</p>
+            <h2 class="page-header">Get srt.js</h2>
+            <pre>$ git clone https://github.com/fuermosi777/srtjs.git srtjs</pre>
+            <p>Or you can just</p>
+            <p>
+                <br><a href="https://github.com/fuermosi777/srtjs" class="github-link">Download from Github</a></p>
+            <h2 class="page-header">Usage</h2>
+            <h3>Start</h3>
+            <p>Start based on CommonJS. You can use it in Node.js, Browserify or Webpack.</p>
+            <pre>var Srt = require('./srt.js');<br>var srt = new Srt(yourSrtText);</pre>
+            <p>You can get the content of a srt file using <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader">FileReader API</a></p>
+            <h3>Lines</h3>
+            <p>Srt object provides access to the lines:</p>
+            <pre>// get the number of entries<br>console.log(srt.lines.length); // 723<br><br>// get the 5th line<br>console.log(srt.lines[4].subtitle); // Come on, let's go!<br><br>// get the index of the entry<br>console.log(srt.lines[4].counter); // 5<br><br>// get the start time of the 5th entry<br>console.log(srt.lines[5].start.text); // 00:01:42,500<br><br>// each entry also has a start and end date object<br>console.log(srt.lines[5].start.time);<br><br>// you can get hours, minutes, seconds, and milliseconds as well<br>console.log(srt.lines[5].start.hours);</pre>
+            <h3>Shift</h3>
+            <pre>// move all subs 5 seconds later<br>srt.shift(5, seconds);<br><br>// move all subs 2 seconds earlier<br>srt.shift(-2, seconds);</pre>
+            <h3>Get .srt text</h3>
+            <p>You can call <code>getSrtContent()</code> method to get the content as plain text.</p>
+            <pre>console.log(srt.getSrtContent());</pre>
+            <p>You can create a download link using Data URI.</p>
+            <h2 class="page-header">License</h2>
+            <p>Srt.js is available under the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="container">
+            <p>
+                <span>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fuermosi777&repo=srtjs&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fuermosi777&repo=srt.js&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+            </span>
+                <span class="pull-right">
+                &copy; <a href="http://liuhao.im">Hao Liu</a> 2015
+            </span>
+            </p>
+        </div>
+    </div>
+    <a href="https://github.com/fuermosi777/srtjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 </body>
 <script src="dist/built.js"></script>
 <!-- Start of StatCounter Code for Default Guide -->
