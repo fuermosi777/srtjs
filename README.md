@@ -11,14 +11,26 @@ A small parser for SubRip(.srt) subtitle file in JavaScript
 
 ## Usage
 
-Node.js/Browserify/Webpack
-
-You can get the content of a srt file using FileReader API
+**Node.js**
 
 ```
-var Srt = require('./srt.js');
+var Srt = require('srtjs'),
+	fs = require('fs');
+	
+var srtText = fs.readFileSync('./test/test.srt', {
+    encoding: 'utf-8'
+});
+	
+var srt = new Srt(srtText);
+```
+
+**Browserify**
+
+```
+var Srt = require('./src/srt.js');
 var srt = new Srt(yourSrtText);
 ```
+
 
 Lines:
 
