@@ -44,7 +44,6 @@ Srt.prototype = {
             case 'hours':
                 {
                     time = 1000 * 60 * 60;
-
                     break;
                 }
             case 'minutes':

@@ -1,8 +1,15 @@
-#Srt.js
+Srt.js
+======
+
+A small parser for SubRip(.srt) subtitle file in JavaScript
 
 [Online demo][1]
 
-#Usage
+## Installation
+
+`npm install srtjs --save`
+
+## Usage
 
 Node.js/Browserify/Webpack
 
@@ -45,13 +52,17 @@ srt.shift(5, seconds);
 srt.shift(-2, seconds);
 ```
 
-Get srt text:
+Get subtitle text:
 
 ```
 console.log(srt.getSrtContent());
 ```
 
-#License
+## Tests
+
+`npm test`
+
+## License
 
 Srt.js is available under the [MIT License][2].
 

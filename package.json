@@ -1,0 +1,37 @@
+{
+    "name": "srtjs",
+    "version": "0.1.0",
+    "description": "A JavaScript parser for .srt subtitle file",
+    "main": "src/srt.js",
+    "dependencies": {},
+    "devDependencies": {
+        "chai": "^2.3.0",
+        "fs": "0.0.2",
+        "gulp": "^3.8.11",
+        "gulp-less": "^3.0.3",
+        "gulp-uglify": "^1.2.0",
+        "gulp-webpack": "^1.4.0",
+        "mocha": "^2.2.5"
+    },
+    "scripts": {
+        "test": "make test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fuermosi777/srtjs.git"
+    },
+    "keywords": [
+        "srt",
+        "subtitle",
+        "parser"
+    ],
+    "author": "Hao Liu <liuhao1990@gmail.com> (http://liuhao.im)",
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+    }],
+    "bugs": {
+        "url": "https://github.com/fuermosi777/srtjs/issues"
+    },
+    "homepage": "https://github.com/fuermosi777/srtjs"
+}
