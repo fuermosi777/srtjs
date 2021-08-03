@@ -58,10 +58,10 @@ Shift:
 
 ```
 // move all subs 5 seconds later
-srt.shift(5, seconds);
+srt.shift(5, "seconds");
 
 // move all subs 2 seconds earlier
-srt.shift(-2, seconds);
+srt.shift(-2, "seconds");
 ```
 
 Get subtitle text:
